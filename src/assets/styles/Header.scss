@@ -5,23 +5,24 @@
   background-color: $blue;
   color: $white;
   box-shadow: $shadd;
+
+  & .logo {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .title-text {
+    font-weight: 300;
+    text-align: left;
+  }
 }
 
-.header .logo {
-  width: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header .title {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.title-text {
-  font-weight: 300;
-  text-align: left;
-}
 
