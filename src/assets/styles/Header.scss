@@ -1,0 +1,27 @@
+.header {
+  width: 100vw;
+  padding: 20px;
+  display: flex;
+  background-color: $blue;
+  color: $white;
+  box-shadow: $shadd;
+}
+
+.header .logo {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.title-text {
+  font-weight: 300;
+  text-align: left;
+}
+
