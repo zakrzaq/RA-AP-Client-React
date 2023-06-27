@@ -1,14 +1,11 @@
 import Header from './components/Header';
 
-import './App.scss'
-
+import './App.scss';
 
 export default function App() {
-
   return (
     <>
       <Header script="test script" />
     </>
-  )
+  );
 }
-
