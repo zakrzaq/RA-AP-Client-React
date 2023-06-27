@@ -1,0 +1,52 @@
+.menu-option {
+  padding: 8px 16px;
+  margin-bottom: 15px;
+  text-decoration: none;
+  background-color: $blue;
+  color: $white;
+  border-radius: 8px;
+  border: 1px solid $blue;
+  transition: 0.3s;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.menu-option:hover {
+  background-color: $white;
+  color: $blue;
+  box-shadow: $shadd;
+}
+
+.menu-option-orange {
+  background-color: $orange;
+  border: 1px solid $orange;
+  color: $white;
+}
+
+.menu-option-orange:hover {
+  background-color: $white;
+  color: $orange;
+}
+
+.menu-option-red {
+  background-color: $red;
+  border: 1px solid $red;
+  color: $white;
+}
+
+.menu-option-red:hover {
+  background-color: $white;
+  color: $red;
+}
+
+.menu-option-green {
+  background-color: $green;
+  border: 1px solid $green;
+  color: $white;
+}
+
+.menu-option-green:hover {
+  background-color: $white;
+  color: $green;
+}

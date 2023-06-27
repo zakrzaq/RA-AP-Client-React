@@ -1,7 +1,9 @@
+import HomeMenu from "../components/Home/Menu";
+
 export default function HomePage() {
   return (
     <>
-      <p>Home page</p>
-    </>
-  );
+      <HomeMenu />
+i   </>  
+);
 }

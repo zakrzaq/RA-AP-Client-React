@@ -1,0 +1,9 @@
+.menu-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__am, &__pm, &__other {
+    max-width: 30%;
+  }
+}

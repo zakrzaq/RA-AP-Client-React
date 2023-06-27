@@ -1,4 +1,4 @@
-import '../assets/styles/Header.scss';
+import './Header.scss';
 
 type Props = {
   script: string;
