@@ -1,16 +1,18 @@
 .header {
-  width: 100vw;
+  width: 100%;
   padding: 20px;
   display: flex;
+  justify-content: space-around;
+  gap: 20px;
   background-color: $blue;
   color: $white;
   box-shadow: $shadd;
 
   & .logo {
-    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
 
   & .title {

@@ -1,5 +1,7 @@
 import { useClientStore } from '../state/client';
 
+import HamburgerMenu from './HamburgerMenu';
+
 import './Header.scss';
 
 export default function Header() {
@@ -18,6 +20,7 @@ export default function Header() {
           {clientStore.script ? clientStore.script : 'Main menu'}
         </h2>
       </div>
+      <HamburgerMenu />
     </header>
   );
 }
