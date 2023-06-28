@@ -23,10 +23,10 @@ export const useClientStore = create<ClientStore>((set) => ({
     set({ script: '' });
     set({ output: [] });
     try {
-      const data = await postClientData(url);
-      set({ script: data.script });
-      set({ output: data.output });
-    } catch (e) {
+      const { script, output } = await postClientData(url);
+      set({ script: script });
+      set({ output: output });
+    } catch (e: any) {
       set({ error: e.message });
     } finally {
       set({ loading: false });

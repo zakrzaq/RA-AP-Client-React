@@ -29,6 +29,11 @@ function HamburgerMenu() {
               Log
             </Link>
           </li>
+          <li>
+            <Link to="/history" onClick={toggleMenu}>
+              History
+            </Link>
+          </li>
         </ul>
       </nav>
     </>
