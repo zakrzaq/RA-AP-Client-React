@@ -2,6 +2,8 @@ import { useEffect} from 'react';
 
 import { useClientStore } from '../../state/client';
 
+import Loader from '../Loader';
+
 import './OutputView.scss';
 
 export default function OutputView() {
@@ -13,16 +15,21 @@ export default function OutputView() {
 
   useEffect(() => {}, [])
 
-  return clientStore.output.length > 0 
-    ? (
+  return (
     <div>
-      <div className="code-output">
+      {clientStore.loading && <Loader />}
+      {clientStore.error && <p>{clientStore.error}</p>}
+      {if (clientStore.output.length > 0) (
+        <>
+
+        <div className="code-output">
           {clientStore.output.map((line, index) => <p key={index}>{line}</p>)}
         </div>
-      <button onClick={handleReturn} className="menu-option">
-        Return
-      </button>
+          <button onClick={handleReturn} className="menu-option">
+            Return
+              </button>
+          </>
+      )}
     </div>
   )
-  : (<div></div>)
 }
