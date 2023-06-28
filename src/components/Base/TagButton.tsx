@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+
+import { useClientStore } from '../../state/client';
+
 import './TagButton.scss';
 
 type Props = {
@@ -8,15 +11,20 @@ type Props = {
 };
 
 export default function TagButton({ label, url, color }: Props) {
+  const clientStore = useClientStore();
   const [tagClass, setTagClass] = useState('tag-option');
+
+  const handleClick = () => {
+    clientStore.getClientData(url);
+  };
 
   useEffect(() => {
     setTagClass(`tag-option ${color ? 'tag-option-' + color : ''}`);
   }, [color]);
 
   return (
-    <a href={url} className={tagClass}>
+    <button onClick={handleClick} className={tagClass}>
       {label}
-    </a>
+    </button>
   );
 }
