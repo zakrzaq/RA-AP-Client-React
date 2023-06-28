@@ -1,10 +1,10 @@
+import { useClientStore } from '../state/client';
+
 import './Header.scss';
 
-type Props = {
-  script: string;
-};
+export default function Header() {
+  const clientStore = useClientStore();
 
-export default function Header({ script }: Props) {
   return (
     <header className="header">
       <div className="logo">
@@ -14,7 +14,9 @@ export default function Header({ script }: Props) {
         </h2>
       </div>
       <div className="title">
-        <h2 className="title-text">{script}</h2>
+        <h2 className="title-text">
+          {clientStore.script ? clientStore.script : 'Main menu'}
+        </h2>
       </div>
     </header>
   );
