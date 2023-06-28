@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useClientStore } from '../../state/client';
 
 import Loader from '../Loader';
+import ErrorMessage from '../ErrorMessage';
 
 import './OutputView.scss';
 
@@ -12,8 +13,6 @@ export default function OutputView() {
     clientStore.resetClientData();
   };
 
-  useEffect(() => {}, []);
-
   return (
     <div>
       {clientStore.loading && (
@@ -21,7 +20,7 @@ export default function OutputView() {
           <Loader />
         </div>
       )}
-      {clientStore.error && <p>{clientStore.error}</p>}
+      {clientStore.error && <ErrorMessage message={clientStore.error} />}
       {clientStore.output.length > 0 ? (
         <>
           <div className="code-output">

@@ -1,4 +1,5 @@
 import { useClientStore } from '../state/client';
+import { useLocation } from 'react-router-dom';
 
 import HamburgerMenu from './HamburgerMenu';
 
@@ -6,6 +7,7 @@ import './Header.scss';
 
 export default function Header() {
   const clientStore = useClientStore();
+  const location = useLocation().pathname;
 
   return (
     <header className="header">
@@ -17,7 +19,11 @@ export default function Header() {
       </div>
       <div className="title">
         <h2 className="title-text">
-          {clientStore.script ? clientStore.script : 'Main menu'}
+          {location === '/' && !!clientStore.script
+            ? clientStore.script
+            : 'Main menu'}
+          {location === '/log' && ' Active Log'}
+          {location === '/history' && ' Action History'}
         </h2>
       </div>
       <HamburgerMenu />

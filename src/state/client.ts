@@ -17,7 +17,8 @@ export const useClientStore = create<ClientStore>((set) => ({
   loading: false,
   error: null,
 
-  resetClientData: () => set({ script: '', output: [] }),
+  resetClientData: () =>
+    set({ script: '', output: [], loading: false, error: null }),
   getClientData: async (url: string) => {
     set({ loading: true });
     set({ script: '' });
