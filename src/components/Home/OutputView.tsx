@@ -1,4 +1,4 @@
-import { useEffect} from 'react';
+import { useEffect } from 'react';
 
 import { useClientStore } from '../../state/client';
 
@@ -9,27 +9,27 @@ import './OutputView.scss';
 export default function OutputView() {
   const clientStore = useClientStore();
   const handleReturn = () => {
-    clientStore.resetClientData()
-  }
+    clientStore.resetClientData();
+  };
 
-
-  useEffect(() => {}, [])
+  useEffect(() => {}, []);
 
   return (
     <div>
       {clientStore.loading && <Loader />}
       {clientStore.error && <p>{clientStore.error}</p>}
-      {if (clientStore.output.length > 0) (
+      {clientStore.output.length > 0 ? (
         <>
-
-        <div className="code-output">
-          {clientStore.output.map((line, index) => <p key={index}>{line}</p>)}
-        </div>
+          <div className="code-output">
+            {clientStore.output.map((line, index) => (
+              <p key={index}>{line}</p>
+            ))}
+          </div>
           <button onClick={handleReturn} className="menu-option">
             Return
-              </button>
-          </>
-      )}
+          </button>
+        </>
+      ) : null}
     </div>
-  )
+  );
 }

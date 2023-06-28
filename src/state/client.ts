@@ -18,15 +18,15 @@ export const useClientStore = create<ClientStore>((set) => ({
 
   resetClientData: () => set({ script: '', output: [] }),
   getClientData: async (url: string) => {
-    set({ laoding: true });
+    set({ loading: true });
     try {
       const data = await postClientData(url);
       set({ script: data.script });
       set({ output: data.output });
     } catch (e) {
-        set({ error: e.message });
+      set({ error: e.message });
     } finally {
-      set({ laoding: false });
+      set({ loading: false });
     }
   },
 }));
