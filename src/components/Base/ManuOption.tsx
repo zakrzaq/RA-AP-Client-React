@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { useClientStore } from '../../state/client'
+import { useClientStore } from '../../state/client';
 
 import './MenuOption.scss';
 
@@ -15,9 +15,8 @@ export default function MenuOption({ label, url, color }: Props) {
   const [buttonClass, setButtonClass] = useState('tag-option');
 
   const handleClick = () => {
-    console.log('here')
-    clientStore.getClientData(url)
-  }
+    clientStore.getClientData(url);
+  };
 
   useEffect(() => {
     setButtonClass(`menu-option ${color ? 'menu-option-' + color : ''}`);

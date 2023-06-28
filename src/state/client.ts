@@ -1,11 +1,11 @@
-import { create } from 'zustand'
+import { create } from 'zustand';
 
-import { postClientData } from '../api'
+import { postClientData } from '../api';
 
 interface ClientStore {
-  script: string
-  output: string[]
-  getClientData: (url: string) => void
+  script: string;
+  output: string[];
+  getClientData: (url: string) => void;
 }
 
 export const useClientStore = create<ClientStore>((set) => ({
@@ -13,11 +13,10 @@ export const useClientStore = create<ClientStore>((set) => ({
   output: [],
   todos: [],
 
+  resetClientData: () => set({ script: '', output: [] }),
   getClientData: async (url: string) => {
-    const data = await postClientData(url)
-    set({ script: data.script })
-    set({ output: data.output })
-  }
-
-}))
-
+    const data = await postClientData(url);
+    set({ script: data.script });
+    set({ output: data.output });
+  },
+}));
