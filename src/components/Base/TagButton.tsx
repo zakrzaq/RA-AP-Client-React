@@ -11,10 +11,7 @@ export default function TagButton({ label, url, color }: Props) {
   const [tagClass, setTagClass] = useState('tag-option');
 
   useEffect(() => {
-    setTagClass(`
-      tag-option 
-      ${color === 'red' ? 'tag-option-red' : ''}
-      `);
+    setTagClass(`tag-option ${color ? 'tag-option-' + color : ''}`);
   }, [color]);
 
   return (
