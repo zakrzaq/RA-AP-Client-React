@@ -1,4 +1,6 @@
-import MenuOption from '../Base/ManuOption';
+import MenuOption from '../Base/MenuOption';
+import './Menu.scss';
+
 import { amOptions, pmOptions, utilOptions } from '../../data/homeMenuOptions';
 
 export default function HomeMenu() {
