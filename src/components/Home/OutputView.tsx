@@ -16,7 +16,11 @@ export default function OutputView() {
 
   return (
     <div>
-      {clientStore.loading && <Loader />}
+      {clientStore.loading && (
+        <div className="code-output">
+          <Loader />
+        </div>
+      )}
       {clientStore.error && <p>{clientStore.error}</p>}
       {clientStore.output.length > 0 ? (
         <>

@@ -7,6 +7,7 @@ interface ClientStore {
   output: string[];
   loading: boolean;
   error: string | null;
+  resetClientData: () => void;
   getClientData: (url: string) => void;
 }
 
@@ -19,6 +20,8 @@ export const useClientStore = create<ClientStore>((set) => ({
   resetClientData: () => set({ script: '', output: [] }),
   getClientData: async (url: string) => {
     set({ loading: true });
+    set({ script: '' });
+    set({ output: [] });
     try {
       const data = await postClientData(url);
       set({ script: data.script });
