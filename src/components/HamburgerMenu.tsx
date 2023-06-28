@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './HamburgerMenu.scss';
 
 function HamburgerMenu() {
@@ -18,9 +19,16 @@ function HamburgerMenu() {
 
       <nav className={`menu ${isOpen ? 'open' : ''}`}>
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <Link to="/" onClick={toggleMenu}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/log" onClick={toggleMenu}>
+              Log
+            </Link>
+          </li>
         </ul>
       </nav>
     </>
